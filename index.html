@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ultras Udinese 1995 - 30 anni di passione, identità e appartenenza!</title>
+<meta name="description" content="30 anni di passione, identità e appartenenza!" />
+<link rel="icon" href="https://www.thomasfattori.it/wp-content/uploads/2025/12/cropped-SenSDFSDFssSDFSDFSDFza-titolo-2-32x32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#000000;
+    --white:#ffffff;
+    --amber:#fcb900;
+    --gray-line:#e2e2e2;
+    --gray-text:#4a4a4a;
+    --max:1170px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Work Sans', sans-serif;
+    color:var(--black);
+    background:var(--white);
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    background:#111;
+    padding:56px 24px 40px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:url('https://www.thomasfattori.it/wp-content/uploads/2025/12/ytttt-1536x1152.jpg') center 70%/cover no-repeat;
+    opacity:0.3;
+    filter:grayscale(40%);
+  }
+  .hero-inner{position:relative;z-index:1;}
+  .logo img{
+    max-width:600px;
+    margin:0 auto 20px;
+  }
+  .social-row{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+  }
+  .social-row a{
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--white);
+    color:#000;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .social-row a:hover{background:var(--amber); transform:translateY(-2px);}
+  .social-row svg{width:19px;height:19px;fill:currentColor;}
+
+  /* NAV */
+  nav.mainnav{
+    border-top:1px solid var(--gray-line);
+    border-bottom:1px solid var(--gray-line);
+    background:var(--white);
+    position:sticky;top:0;z-index:50;
+  }
+  nav.mainnav .wrap{
+    display:flex;
+    justify-content:center;
+    gap:36px;
+    padding:16px 24px;
+    flex-wrap:wrap;
+  }
+  nav.mainnav a{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    letter-spacing:.03em;
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  nav.mainnav a.active,
+  nav.mainnav a:hover{
+    border-color:var(--amber);
+  }
+
+  /* MAIN LAYOUT */
+  main{padding:48px 24px 64px;}
+  .layout{
+    display:grid;
+    grid-template-columns:1fr 300px;
+    gap:48px;
+    max-width:var(--max);
+    margin:0 auto;
+  }
+  @media (max-width: 860px){
+    .layout{grid-template-columns:1fr;}
+  }
+
+  .post-card{
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+    margin-bottom:40px;
+    background:var(--white);
+  }
+  .post-card figure{margin:0;aspect-ratio:16/9;overflow:hidden;}
+  .post-card figure img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+  .post-card:hover figure img{transform:scale(1.03);}
+  .post-body{padding:28px 28px 32px;text-align:center;}
+  .post-body h2{font-size:clamp(1.5rem, 1.2rem + 1vw, 2rem);margin-bottom:14px;}
+  .post-body h2 a:hover{color:var(--amber);}
+  .post-excerpt{color:var(--gray-text);font-size:0.95rem;margin-bottom:18px;}
+  .post-excerpt a{
+    display:inline-block;
+    margin-top:4px;
+    font-weight:600;
+    border-bottom:1px solid currentColor;
+  }
+  .post-meta{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-size:0.8rem;
+    color:var(--gray-text);
+  }
+  .post-meta .avatar{
+    width:22px;height:22px;border-radius:50%;
+    background:var(--amber);
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:0.65rem;font-weight:700;color:#000;
+  }
+
+  /* SIDEBAR */
+  .sidebar-box{
+    border-radius:14px;
+    background:#f9f9f9;
+    padding:24px;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+  }
+  .sidebar-box h3{font-size:1.15rem;margin-bottom:14px;}
+  .sidebar-box hr{border:none;border-top:2px solid var(--amber);margin:0 0 18px;}
+  .recent-item{
+    display:flex;gap:12px;align-items:center;
+    padding:10px 0;
+    border-bottom:1px solid var(--gray-line);
+    font-size:0.85rem;
+  }
+  .recent-item:last-child{border-bottom:none;}
+  .recent-item img{
+    width:44px;height:44px;border-radius:8px;object-fit:cover;flex-shrink:0;
+  }
+  .recent-item .rec-title{font-weight:600;display:block;line-height:1.3;}
+  .recent-item .rec-title:hover{color:var(--amber);}
+  .recent-item time{display:block;color:var(--gray-text);font-size:0.75rem;margin-top:2px;}
+
+  /* FOOTER */
+  footer{
+    background:#111;
+    color:var(--white);
+    text-align:center;
+    padding:64px 24px;
+  }
+  footer .logo img{max-width:220px;margin:0 auto 16px;filter:brightness(0) invert(1);}
+  footer p{margin:6px 0;font-size:0.95rem;}
+  footer .foot-social{
+    display:flex;gap:16px;justify-content:center;margin-top:18px;
+  }
+  footer .foot-social a{color:#fff;opacity:.85;}
+  footer .foot-social a:hover{opacity:1;color:var(--amber);}
+  footer .foot-social svg{width:22px;height:22px;fill:currentColor;}
+
+  /* POPUP */
+  .popup-overlay{
+    position:fixed;inset:0;
+    background:rgba(0,0,0,.7);
+    display:flex;align-items:center;justify-content:center;
+    z-index:999;
+    padding:20px;
+  }
+  .popup-overlay[hidden]{display:none;}
+  .popup-box{
+    background:var(--white);
+    border-radius:12px;
+    max-width:480px;width:100%;
+    overflow:hidden;
+    position:relative;
+    text-align:center;
+  }
+  .popup-box img{width:100%;}
+  .popup-close{
+    position:absolute;top:8px;right:8px;
+    background:rgba(0,0,0,.6);color:#fff;
+    border:none;width:30px;height:30px;border-radius:50%;
+    font-size:1rem;cursor:pointer;
+  }
+  .popup-content{padding:20px 28px 28px;}
+  .popup-content h3{font-size:1.4rem;margin-bottom:4px;}
+  .popup-content h4{font-family:'Work Sans';font-weight:600;text-transform:none;letter-spacing:0;color:var(--gray-text);margin-bottom:14px;}
+  .popup-content p{font-size:0.9rem;color:var(--gray-text);}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="logo">
+      <a href="index.html"><img src="https://www.thomasfattori.it/wp-content/uploads/2025/12/Risorsa-4.png" alt="Ultras Udinese 1995" /></a>
+    </div>
+    <div class="social-row">
+      <a href="https://www.facebook.com/ultrasudinese" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12c0-5.5-4.5-10-10-10z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/ultrasudinese1995/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12,4.6c2.4,0,2.7,0,3.6,0.1c0.9,0,1.4,0.2,1.7,0.3c0.4,0.2,0.7,0.4,1,0.7c0.3,0.3,0.5,0.6,0.7,1c0.1,0.3,0.3,0.8,0.3,1.7c0,0.9,0.1,1.2,0.1,3.6s0,2.7-0.1,3.6c0,0.9-0.2,1.4-0.3,1.7c-0.2,0.4-0.4,0.7-0.7,1c-0.3,0.3-0.6,0.5-1,0.7c-0.3,0.1-0.8,0.3-1.7,0.3c-0.9,0-1.2,0.1-3.6,0.1s-2.7,0-3.6-0.1c-0.9,0-1.4-0.2-1.7-0.3c-0.4-0.2-0.7-0.4-1-0.7c-0.3-0.3-0.5-0.6-0.7-1c-0.1-0.3-0.3-0.8-0.3-1.7C4.6,14.7,4.6,14.4,4.6,12s0-2.7,0.1-3.6c0-0.9,0.2-1.4,0.3-1.7c0.2-0.4,0.4-0.7,0.7-1c0.3-0.3,0.6-0.5,1-0.7C7,4.8,7.5,4.6,8.4,4.6C9.3,4.6,9.6,4.6,12,4.6 M12,3C9.6,3,9.2,3,8.3,3.1C7.3,3.1,6.7,3.3,6.1,3.5C5.5,3.7,5,4,4.5,4.5C4,5,3.7,5.5,3.5,6.1C3.3,6.7,3.1,7.3,3.1,8.3C3,9.2,3,9.6,3,12s0,2.8,0.1,3.7c0,1,0.2,1.6,0.4,2.2c0.2,0.6,0.5,1.1,1,1.6c0.5,0.5,1,0.8,1.6,1c0.6,0.2,1.2,0.4,2.2,0.4C9.2,21,9.6,21,12,21s2.8,0,3.7-0.1c1,0,1.6-0.2,2.2-0.4c0.6-0.2,1.1-0.5,1.6-1c0.5-0.5,0.8-1,1-1.6c0.2-0.6,0.4-1.2,0.4-2.2c0-0.9,0.1-1.2,0.1-3.7s0-2.8-0.1-3.7c0-1-0.2-1.6-0.4-2.2c-0.2-0.6-0.5-1.1-1-1.6c-0.5-0.5-1-0.8-1.6-1c-0.6-0.2-1.2-0.4-2.2-0.4C14.8,3,14.4,3,12,3L12,3z M12,7.4c-2.6,0-4.6,2.1-4.6,4.6s2.1,4.6,4.6,4.6s4.6-2.1,4.6-4.6S14.6,7.4,12,7.4z M12,15c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S13.7,15,12,15z M16.8,6.1c-0.6,0-1.1,0.5-1.1,1.1s0.5,1.1,1.1,1.1c0.6,0,1.1-0.5,1.1-1.1S17.4,6.1,16.8,6.1z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="wrap">
+    <a href="lanostrastoria.html">LA NOSTRA STORIA</a>
+    <a href="on-the-terraces.html">FANZINE</a>
+    <a href="materiale.html" class="active">MATERIALE</a>
+    <a href="archivio.html">ARCHIVIO</a>
+  </div>
+</nav>
+
+<main>
+  <div class="layout">
+
+    <div class="posts">
+
+      <article class="post-card">
+        <figure>
+          <a href="como-udinese.html"><img src="https://www.thomasfattori.it/wp-content/uploads/2026/02/610756659_18035113928737631_7650858132579768768_n.jpg" alt="Como – Udinese"/></a>
+        </figure>
+        <div class="post-body">
+          <h2><a href="como-udinese.html">Como &ndash; Udinese</a></h2>
+          <p class="post-excerpt">Fotografie della gara esterna a Como &ndash; 03/01/2026<br/><a href="como-udinese.html">leggi di più</a></p>
+          <div class="post-meta">
+            <span class="avatar">UU</span> Ultras Udinese 1995 <span>//</span> <time>4 Febbraio 2026</time>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <figure>
+          <a href="udinese-lazio.html"><img src="https://www.thomasfattori.it/wp-content/uploads/2026/02/608007252_18034385051737631_597358546476635001_n-1024x768.jpg" alt="Udinese – Lazio"/></a>
+        </figure>
+        <div class="post-body">
+          <h2><a href="udinese-lazio.html">Udinese &ndash; Lazio</a></h2>
+          <p class="post-excerpt">Fotografie della gara casalinga 27/12/2025<br/><a href="udinese-lazio.html">leggi di più</a></p>
+          <div class="post-meta">
+            <span class="avatar">UU</span> Ultras Udinese 1995 <span>//</span> <time>4 Febbraio 2026</time>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <figure>
+          <a href="fiorentina-udinese.html"><img src="https://www.thomasfattori.it/wp-content/uploads/2025/12/WhatsApp-dd2025-12-24-at-22.20.55-1024x682.png" alt="Fiorentina – Udinese"/></a>
+        </figure>
+        <div class="post-body">
+          <h2><a href="fiorentina-udinese.html">Fiorentina &ndash; Udinese</a></h2>
+          <p class="post-excerpt">Immagini della nostra tifoseria presente a Firenze, domenica 21 dicembre 2025.<br/><a href="fiorentina-udinese.html">leggi di più</a></p>
+          <div class="post-meta">
+            <span class="avatar">UU</span> Ultras Udinese 1995 <span>//</span> <time>26 Dicembre 2025</time>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <figure>
+          <a href="salzburg-udine.html"><img src="https://www.thomasfattori.it/wp-content/uploads/2025/12/4-14-1030x644-1-1024x640.jpg" alt="Salzburg & Udine"/></a>
+        </figure>
+        <div class="post-body">
+          <h2><a href="salzburg-udine.html">Salzburg &amp; Udine</a></h2>
+          <p class="post-excerpt">Austria Klagenfurt &ndash; Austria Salzburg (0-1)<br/><a href="salzburg-udine.html">leggi di più</a></p>
+          <div class="post-meta">
+            <span class="avatar">UU</span> Ultras Udinese 1995 <span>//</span> <time>25 Dicembre 2025</time>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <aside class="sidebar-box">
+      <h3>Post recenti</h3>
+      <hr/>
+      <div class="recent-item">
+        <img src="https://www.thomasfattori.it/wp-content/uploads/2026/02/610756659_18035113928737631_7650858132579768768_n-150x150.jpg" alt=""/>
+        <div>
+          <a class="rec-title" href="como-udinese.html">Como &ndash; Udinese</a>
+          <time>4 Febbraio 2026</time>
+        </div>
+      </div>
+      <div class="recent-item">
+        <img src="https://www.thomasfattori.it/wp-content/uploads/2026/02/608007252_18034385051737631_597358546476635001_n-150x150.jpg" alt=""/>
+        <div>
+          <a class="rec-title" href="udinese-lazio.html">Udinese &ndash; Lazio</a>
+          <time>4 Febbraio 2026</time>
+        </div>
+      </div>
+      <div class="recent-item">
+        <img src="https://www.thomasfattori.it/wp-content/uploads/2025/12/WhatsApp-dd2025-12-24-at-22.20.55-150x150.png" alt=""/>
+        <div>
+          <a class="rec-title" href="fiorentina-udinese.html">Fiorentina &ndash; Udinese</a>
+          <time>26 Dicembre 2025</time>
+        </div>
+      </div>
+      <div class="recent-item">
+        <img src="https://www.thomasfattori.it/wp-content/uploads/2025/12/4-14-1030x644-1-150x150.jpg" alt=""/>
+        <div>
+          <a class="rec-title" href="salzburg-udine.html">Salzburg &amp; Udine</a>
+          <time>25 Dicembre 2025</time>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="logo">
+    <img src="https://www.thomasfattori.it/wp-content/uploads/2025/12/Risorsa-4.png" alt="Ultras Udinese 1995"/>
+  </div>
+  <p><strong>Original Style</strong> since 1995</p>
+  <p>materialeultrasudinese@hotmail.com</p>
+  <div class="foot-social">
+    <a href="https://www.facebook.com/ultrasudinese/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12c0-5.5-4.5-10-10-10z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/ultrasudinese1995/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12,4.6c2.4,0,2.7,0,3.6,0.1c0.9,0,1.4,0.2,1.7,0.3c0.4,0.2,0.7,0.4,1,0.7c0.3,0.3,0.5,0.6,0.7,1c0.1,0.3,0.3,0.8,0.3,1.7c0,0.9,0.1,1.2,0.1,3.6s0,2.7-0.1,3.6c0,0.9-0.2,1.4-0.3,1.7c-0.2,0.4-0.4,0.7-0.7,1c-0.3,0.3-0.6,0.5-1,0.7c-0.3,0.1-0.8,0.3-1.7,0.3c-0.9,0-1.2,0.1-3.6,0.1s-2.7,0-3.6-0.1c-0.9,0-1.4-0.2-1.7-0.3c-0.4-0.2-0.7-0.4-1-0.7c-0.3-0.3-0.5-0.6-0.7-1c-0.1-0.3-0.3-0.8-0.3-1.7C4.6,14.7,4.6,14.4,4.6,12s0-2.7,0.1-3.6c0-0.9,0.2-1.4,0.3-1.7c0.2-0.4,0.4-0.7,0.7-1c0.3-0.3,0.6-0.5,1-0.7C7,4.8,7.5,4.6,8.4,4.6C9.3,4.6,9.6,4.6,12,4.6 M12,3C9.6,3,9.2,3,8.3,3.1C7.3,3.1,6.7,3.3,6.1,3.5C5.5,3.7,5,4,4.5,4.5C4,5,3.7,5.5,3.5,6.1C3.3,6.7,3.1,7.3,3.1,8.3C3,9.2,3,9.6,3,12s0,2.8,0.1,3.7c0,1,0.2,1.6,0.4,2.2c0.2,0.6,0.5,1.1,1,1.6c0.5,0.5,1,0.8,1.6,1c0.6,0.2,1.2,0.4,2.2,0.4C9.2,21,9.6,21,12,21s2.8,0,3.7-0.1c1,0,1.6-0.2,2.2-0.4c0.6-0.2,1.1-0.5,1.6-1c0.5-0.5,0.8-1,1-1.6c0.2-0.6,0.4-1.2,0.4-2.2c0-0.9,0.1-1.2,0.1-3.7s0-2.8-0.1-3.7c0-1-0.2-1.6-0.4-2.2c-0.2-0.6-0.5-1.1-1-1.6c-0.5-0.5-1-0.8-1.6-1c-0.6-0.2-1.2-0.4-2.2-0.4C14.8,3,14.4,3,12,3L12,3z M12,7.4c-2.6,0-4.6,2.1-4.6,4.6s2.1,4.6,4.6,4.6s4.6-2.1,4.6-4.6S14.6,7.4,12,7.4z M12,15c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S13.7,15,12,15z M16.8,6.1c-0.6,0-1.1,0.5-1.1,1.1s0.5,1.1,1.1,1.1c0.6,0,1.1-0.5,1.1-1.1S17.4,6.1,16.8,6.1z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<div class="popup-overlay" id="popup" hidden>
+  <div class="popup-box">
+    <button class="popup-close" id="popup-close" aria-label="Chiudi">&times;</button>
+    <img src="https://www.thomasfattori.it/wp-content/uploads/2026/02/ddssdds-scaled.png" alt=""/>
+    <div class="popup-content">
+      <h3>Tutti a Bologna</h3>
+      <h4>Lunedì 23 febbraio 2026</h4>
+      <p><strong>Partecipa alla trasferta</strong> per seguire l'Udinese a Bologna! <strong>Scrivici</strong> sui social (<em>Facebook, Instagram</em>).</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mostra il popup dopo 3 secondi, come sul sito originale
+  setTimeout(function(){
+    document.getElementById('popup').removeAttribute('hidden');
+  }, 3000);
+  document.getElementById('popup-close').addEventListener('click', function(){
+    document.getElementById('popup').setAttribute('hidden','');
+  });
+  document.getElementById('popup').addEventListener('click', function(e){
+    if(e.target === this){ this.setAttribute('hidden',''); }
+  });
+</script>
+
+</body>
+</html>
